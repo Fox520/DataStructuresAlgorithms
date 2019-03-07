@@ -1,10 +1,29 @@
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
-    	
+        testQueue();
     }
 
+    public static void testQueue(){
+        Queue1 q = new Queue1();
+        q.enqueue("first");
+        q.enqueue("second");
+        q.enqueue("third");
+        System.out.println(q);
+        q.dequeue();
+        System.out.println(q);
+        q.dequeue();
+        System.out.println(q);
+        q.dequeue();
+        System.out.println(q);
+        q.dequeue();
+        System.out.println(q);
+        
+    }
+    
     public static void withArrayList() {
         MyStack<String> m = new MyStack();
         System.out.println(m.empty());
