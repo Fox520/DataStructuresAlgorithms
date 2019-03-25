@@ -24,6 +24,7 @@ public class Main{
     public static int[] selectionSort(int[] array) {
         int n = array.length - 1;
         //no need to sort array with 1 item
+        //already trivially sorted
         if (n <= 0) {
             return array;
         } else {
@@ -39,9 +40,15 @@ public class Main{
                         min = j;
                     }
                 }
-                int temp = array[i];
-                array[i] = array[min];
-                array[min] = temp;
+                //swap if min is not same as i
+                if(i != min){
+                    int temp = array[i];
+                    array[i] = array[min];
+                    array[min] = temp;
+                }else{
+                    // System.out.println("i ["+i+"] == min ["+min+"]");
+                }
+                
             }
             return array;
         }
