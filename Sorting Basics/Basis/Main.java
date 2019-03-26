@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class Main{
     public static void main(String[] args) {
-        String testMethod = "selection";
+        String testMethod = "insertionList";
         switch(testMethod){
             case "selection":
                 //testing selection sort
-                int[] unsortedSelection = {5, 3, 1, 2, 4, 10, 0};
+                int[] unsortedSelection = {5, 3, 1, 2, 4, 10, 0, 11};
                 for (int A : selectionSort(unsortedSelection)) {
                     System.out.print(A + " ");
                 }
@@ -12,8 +14,15 @@ public class Main{
 
             case "insertion":
                 //testing insertion sort
-                int[] unsortedInsertion = {5, 3, 1, 2, 4, 10, 0};
+                int[] unsortedInsertion = {5, 3, 1, 2, 4, 10, 0, 11};
                 for (int A : sortInsert(unsortedInsertion)) {
+                    System.out.print(A + " ");
+                }
+                break;
+            case "insertionList":
+                //testing insertion sort
+                int[] unsortedInsertionList = {5, 3, 1, 2, 4, 10, 0, 11};
+                for (int A : insertionSortList(unsortedInsertionList)) {
                     System.out.print(A + " ");
                 }
                 break;
@@ -69,5 +78,30 @@ public class Main{
             i++;
         }
         return A;
+    }
+    public static ArrayList<Integer> insertionSortList(int[] unsorted) {
+        ArrayList<Integer> sorted = new ArrayList<>();
+        int n = unsorted.length - 1;
+        sorted.add(unsorted[0]);
+        //i set 1 so don't compare itself
+        //else if i = 0 then added twice to sorted
+        for (int i = 1; i <= n; i++) {
+            //OUTER LOOP
+            int toCompare = unsorted[i];
+            int j;
+            for (j = 0; j < sorted.size(); j++) {
+                //INNER LOOP
+                if (toCompare < sorted.get(j)) {
+                    sorted.add(j, toCompare);
+                    break;
+                }
+            }
+            //do comparison outside
+            //to check if at the end of array
+            if (j == sorted.size()) {
+                sorted.add(toCompare);
+            }
+        }
+        return sorted;
     }
 }
