@@ -25,11 +25,17 @@ public class Main {
     public static boolean binarySearch(int value, int[] array) {
         int leftPos = 0;
         int rightPos = array.length - 1; //to stick within bounds
+        int breakPoint = 0;
         while (true) {
+            
+            if(breakPoint > array.length){
+                return false;
+            }
+            
             int midPosition = (int) (leftPos + rightPos) / 2;
             if (array[midPosition] == value) {
                 //System.out.println("Found it");
-                break;
+                return true;
             } else if (array[midPosition] > value) {
                 // [1,2,3,4,5,6,7]
                 //midVal (4) is greater than searchValue (3)
@@ -39,7 +45,6 @@ public class Main {
                 leftPos = midPosition + 1;
             }
         }
-        return true;
     }
 
     public static boolean linearSearch(int value, int[] array) {
