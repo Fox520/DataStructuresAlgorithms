@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Lone Wolf
+ */
 
 import java.util.LinkedList;
 

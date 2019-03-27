@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Lone Wolf
+ */
 
 public class Node <AnyType> {
     private AnyType data;

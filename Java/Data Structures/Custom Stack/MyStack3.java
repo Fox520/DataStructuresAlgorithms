@@ -1,4 +1,7 @@
-
+/**
+ *
+ * @author Lone Wolf
+ */
 //using regular array to implement a stack
 
 public class MyStack3 {

@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Lone Wolf
+ */
+
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
