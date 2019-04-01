@@ -44,6 +44,7 @@ public class Main {
             } else if (array[midPosition] < value) {
                 leftPos = midPosition + 1;
             }
+            breakPoint++;
         }
     }
 
