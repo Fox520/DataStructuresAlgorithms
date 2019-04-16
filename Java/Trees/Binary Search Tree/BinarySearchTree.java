@@ -27,7 +27,8 @@ public class BinarySearchTree {
                 if (val == tempNode.getVal()) {
                     return true;
                 }
-            } catch (IndexOutOfBoundsException ex) {}
+            } catch (IndexOutOfBoundsException ex) {
+            }
 
             if (val < tempNode.getVal()) {
                 tempNode = tempNode.getLeft();
@@ -47,15 +48,64 @@ public class BinarySearchTree {
      * Then display root
      * Do the same with the right
      */
-    public void printInOrder(Node root){
-        if(root != null){
+    public void printInOrder(Node root) {
+        if (root != null) {
             printInOrder(root.getLeft());
             System.out.println(root.getVal());
             printInOrder(root.getRight());
         }
     }
-    public void printInOrder(){
+
+    public void printInOrder() {
         printInOrder(root);
+    }
+
+    public void printPreOrder(Node root) {
+        if (root != null) {
+            System.out.println(root.getVal());
+            printInOrder(root.getLeft());
+            printInOrder(root.getRight());
+        }
+    }
+
+    public void printPreOrder() {
+        printPreOrder(root);
+    }
+
+    public void printPostOrder(Node root) {
+        if (root != null) {
+            printPostOrder(root.getLeft());
+            printPostOrder(root.getRight());
+            System.out.println(root.getVal());
+        }
+    }
+
+    public void printPostOrder() {
+        printInOrder(root);
+    }
+
+    public Node search(int value) {
+        Node tempNode = root;
+        int count = 0;
+        while (count < size) {
+            if(tempNode != null){
+                if (tempNode.getVal() == value) {
+                    return tempNode;
+                } else {
+                    if (value > tempNode.getVal()) {
+                        tempNode = tempNode.getRight();
+                    } else {
+                        tempNode = tempNode.getLeft();
+                    }
+                    count++;
+                }
+            }else{
+                break;
+            }
+
+        }
+        // Get here only if no match found
+        return null;
     }
 
     @Override

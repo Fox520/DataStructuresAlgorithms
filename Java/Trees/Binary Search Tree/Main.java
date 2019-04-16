@@ -7,6 +7,7 @@ public class Main {
         b.insert(9);
         b.insert(12);
         b.insert(3);
-        b.printInOrder();
+//        b.printPreOrder();
+        System.out.println(b.search(9));
     }
 }
