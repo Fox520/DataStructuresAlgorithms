@@ -1,4 +1,4 @@
-__author__ = "Lone Wolf"
+__author__ = "Fox520"
 
 def binarySearch(value, array):
     leftPos = 0
